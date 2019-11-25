@@ -1,0 +1,9 @@
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\TwinSee.exe.config
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\TwinSee.exe
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\TwinSee.pdb
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.csprojAssemblyReference.cache
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.Form1.resources
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.Properties.Resources.resources
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.csproj.GenerateResource.cache
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.exe
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.pdb
