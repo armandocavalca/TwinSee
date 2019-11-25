@@ -32,6 +32,7 @@
             this.lbl_testo = new System.Windows.Forms.Label();
             this.btn_ok = new System.Windows.Forms.Button();
             this.TimerLettura = new System.Windows.Forms.Timer(this.components);
+            this.Btn_help = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_testo
@@ -65,11 +66,21 @@
             // 
             this.TimerLettura.Tick += new System.EventHandler(this.TimerLettura_Tick);
             // 
+            // Btn_help
+            // 
+            this.Btn_help.Location = new System.Drawing.Point(746, 402);
+            this.Btn_help.Name = "Btn_help";
+            this.Btn_help.Size = new System.Drawing.Size(55, 35);
+            this.Btn_help.TabIndex = 2;
+            this.Btn_help.Text = "HELP";
+            this.Btn_help.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Btn_help);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.lbl_testo);
             this.Name = "Form1";
@@ -84,6 +95,7 @@
         private System.Windows.Forms.Label lbl_testo;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Timer TimerLettura;
+        private System.Windows.Forms.Button Btn_help;
     }
 }
 
