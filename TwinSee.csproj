@@ -91,5 +91,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ValidaUser\ValidaUser.csproj">
+      <Project>{985404d7-44cc-4850-9749-7a595ace825b}</Project>
+      <Name>ValidaUser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

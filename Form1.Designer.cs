@@ -33,6 +33,7 @@
             this.btn_ok = new System.Windows.Forms.Button();
             this.TimerLettura = new System.Windows.Forms.Timer(this.components);
             this.Btn_help = new System.Windows.Forms.Button();
+            this.Btn_closingWithPassord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_testo
@@ -44,7 +45,7 @@
             this.lbl_testo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_testo.Location = new System.Drawing.Point(48, 21);
             this.lbl_testo.Name = "lbl_testo";
-            this.lbl_testo.Size = new System.Drawing.Size(651, 362);
+            this.lbl_testo.Size = new System.Drawing.Size(651, 343);
             this.lbl_testo.TabIndex = 0;
             this.lbl_testo.Text = "TWINSEE ";
             this.lbl_testo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -77,11 +78,23 @@
             this.Btn_help.UseVisualStyleBackColor = true;
             this.Btn_help.Click += new System.EventHandler(this.Btn_help_Click);
             // 
+            // Btn_closingWithPassord
+            // 
+            this.Btn_closingWithPassord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_closingWithPassord.Location = new System.Drawing.Point(705, 364);
+            this.Btn_closingWithPassord.Name = "Btn_closingWithPassord";
+            this.Btn_closingWithPassord.Size = new System.Drawing.Size(83, 35);
+            this.Btn_closingWithPassord.TabIndex = 3;
+            this.Btn_closingWithPassord.Text = "CWP";
+            this.Btn_closingWithPassord.UseVisualStyleBackColor = true;
+            this.Btn_closingWithPassord.Click += new System.EventHandler(this.Btn_closingWithPassord_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Btn_closingWithPassord);
             this.Controls.Add(this.Btn_help);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.lbl_testo);
@@ -101,6 +114,7 @@
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Timer TimerLettura;
         private System.Windows.Forms.Button Btn_help;
+        private System.Windows.Forms.Button Btn_closingWithPassord;
     }
 }
 

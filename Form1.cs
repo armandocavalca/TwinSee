@@ -16,6 +16,7 @@ namespace TwinSee
         static string ConfigHelpFolder;
         static string _Filesolo;
         static string _costante;
+        static bool _autorizzatouscire = false;
         public Form1()
         {
             InitializeComponent();
@@ -118,9 +119,11 @@ namespace TwinSee
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            MessageBox.Show("Utilizzare tasto OK 'Continua'");
-
+            if (!_autorizzatouscire)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Utilizzare tasto OK 'Continua'");
+            }
         }
 
         private void Btn_help_Click(object sender, EventArgs e)
@@ -139,6 +142,26 @@ namespace TwinSee
                 _process.StartInfo.CreateNoWindow = false;
                 _process.Start();
             }
+        }
+
+        private void Btn_closingWithPassord_Click(object sender, EventArgs e)
+        {
+            ValidaUser.Validazione _valida = new ValidaUser.Validazione();
+            _valida._valido = false;
+            ValidaUser.ValidaStatico._validazione = _valida;
+            ValidaUser.Form1 fvu = new ValidaUser.Form1();
+            fvu.ShowDialog();
+            _valida = ValidaUser.ValidaStatico._validazione;
+            if (_valida._valido)
+            {
+                
+                if (MessageBox.Show("Utente autorizzato alla chiusura del programma, procedo?", "Uscita", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _autorizzatouscire = true;
+                    this.Close(); }
+            }
+
+            return;
         }
     }
 }
