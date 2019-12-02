@@ -1,0 +1,5 @@
+da scrivere nel programma:
+elenco tipi di file da non controllare
+togliere possibilità di chiusura da X
+"Questo programma controlla la creazione simultanea di due file log di testo"
+nel messaggio di errore inserie nome file orfano 

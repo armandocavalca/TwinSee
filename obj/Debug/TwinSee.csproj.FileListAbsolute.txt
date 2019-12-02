@@ -7,3 +7,7 @@ C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.Properties.Resources.r
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.csproj.GenerateResource.cache
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.exe
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.pdb
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\DocumentFormat.OpenXml.dll
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\System.IO.Packaging.dll
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\DocumentFormat.OpenXml.xml
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.csproj.CopyComplete

@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
-using Timer = System.Timers.Timer;
+
 
 namespace TwinSee
 {
@@ -19,6 +13,9 @@ namespace TwinSee
         static string ConfigValueFolder;
         static string FileDaOmettere;
         static List<string> GiaVerificati;
+        static string ConfigHelpFolder;
+        static string _Filesolo;
+        static string _costante;
         public Form1()
         {
             InitializeComponent();
@@ -29,9 +26,11 @@ namespace TwinSee
             GiaVerificati = new List<string>();
             ConfigValueFolder = ConfigurationManager.AppSettings["Cartella"];
             FileDaOmettere = ConfigurationManager.AppSettings["Filedaomettere"];
-            lbl_testo.Text = "TWINSEE" + Environment.NewLine +
+            ConfigHelpFolder = ConfigurationManager.AppSettings["PercorsoHelp"];
+            _costante = "TWINSEE" + Environment.NewLine +
                 "ATTENZIONE E' STATO GENERATO" + Environment.NewLine +
                 "UN SOLO FILE LOG" + Environment.NewLine +
+                " NEW_FILE " + Environment.NewLine +
                 Environment.NewLine +
                 "CONTROLLARE DI AVER CARICATO" + Environment.NewLine +
                 "IL PROGRAMMA CORRETTO!";
@@ -46,6 +45,7 @@ namespace TwinSee
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
+            lbl_testo.Text = "Controllo in esecuzione .......";
             this.WindowState = FormWindowState.Minimized;
             TimerLettura.Start();
         }
@@ -70,6 +70,8 @@ namespace TwinSee
             if (ControllaGemelli())
             {
                 TimerLettura.Stop();
+                lbl_testo.Text = _costante.Replace("NEW_FILE", _Filesolo);
+
                 this.WindowState = FormWindowState.Normal;
                 //GoFullscreen(true);
             }
@@ -105,12 +107,38 @@ namespace TwinSee
                     if (_nomifile[i] != _nomifile[i + 1])
                     {
                         GiaVerificati.Add(_nomifile[i]);
+                        _Filesolo = _nomifile[i];
                         return true;
                     }
                     i++;
                 }
             }
             return false;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            MessageBox.Show("Utilizzare tasto OK 'Continua'");
+
+        }
+
+        private void Btn_help_Click(object sender, EventArgs e)
+        {
+            if(!File.Exists(ConfigHelpFolder))
+            {
+                MessageBox.Show(" il file :" +
+                    ConfigHelpFolder +
+                    Environment.NewLine +
+                    " inesistente o non raggiungibile");
+                return;
+            }
+            using (Process _process = new Process())
+            {
+                _process.StartInfo.FileName = ConfigHelpFolder;
+                _process.StartInfo.CreateNoWindow = false;
+                _process.Start();
+            }
         }
     }
 }

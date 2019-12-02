@@ -44,7 +44,7 @@
             this.lbl_testo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_testo.Location = new System.Drawing.Point(48, 21);
             this.lbl_testo.Name = "lbl_testo";
-            this.lbl_testo.Size = new System.Drawing.Size(692, 362);
+            this.lbl_testo.Size = new System.Drawing.Size(651, 362);
             this.lbl_testo.TabIndex = 0;
             this.lbl_testo.Text = "TWINSEE ";
             this.lbl_testo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,7 +56,7 @@
             this.btn_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ok.Location = new System.Drawing.Point(51, 402);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(689, 36);
+            this.btn_ok.Size = new System.Drawing.Size(648, 36);
             this.btn_ok.TabIndex = 1;
             this.btn_ok.Text = "OK Continua";
             this.btn_ok.UseVisualStyleBackColor = true;
@@ -68,12 +68,14 @@
             // 
             // Btn_help
             // 
-            this.Btn_help.Location = new System.Drawing.Point(746, 402);
+            this.Btn_help.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_help.Location = new System.Drawing.Point(705, 405);
             this.Btn_help.Name = "Btn_help";
-            this.Btn_help.Size = new System.Drawing.Size(55, 35);
+            this.Btn_help.Size = new System.Drawing.Size(83, 35);
             this.Btn_help.TabIndex = 2;
             this.Btn_help.Text = "HELP";
             this.Btn_help.UseVisualStyleBackColor = true;
+            this.Btn_help.Click += new System.EventHandler(this.Btn_help_Click);
             // 
             // Form1
             // 
@@ -83,8 +85,11 @@
             this.Controls.Add(this.Btn_help);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.lbl_testo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1 - Rel. 1.0.0";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
