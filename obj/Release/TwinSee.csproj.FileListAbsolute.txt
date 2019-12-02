@@ -1,13 +1,10 @@
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\TwinSee.exe.config
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\TwinSee.exe
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\TwinSee.pdb
-C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.csprojAssemblyReference.cache
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.Form1.resources
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.Properties.Resources.resources
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.csproj.GenerateResource.cache
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.exe
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.pdb
-C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\DocumentFormat.OpenXml.dll
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\System.IO.Packaging.dll
-C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\DocumentFormat.OpenXml.xml
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.csproj.CopyComplete
