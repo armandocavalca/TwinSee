@@ -8,3 +8,7 @@ C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.exe
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.pdb
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\System.IO.Packaging.dll
 C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.csproj.CopyComplete
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\ValidaUser.exe
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\ValidaUser.pdb
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Release\ValidaUser.exe.config
+C:\dati clienti\Gsm Applicativi\TwinSee\obj\Release\TwinSee.csprojAssemblyReference.cache
