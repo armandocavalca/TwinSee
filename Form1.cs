@@ -17,6 +17,8 @@ namespace TwinSee
         static string _Filesolo;
         static string _costante;
         static bool _autorizzatouscire = false;
+        static bool _firsttime = true;
+
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +79,7 @@ namespace TwinSee
                 //GoFullscreen(true);
             }
 
+
         }
         private bool ControllaGemelli()
         {
@@ -87,31 +90,54 @@ namespace TwinSee
             {
 
                 var nomefile1 = Path.GetFileNameWithoutExtension(f.FullName);
-                string[] _filedacontrollare = nomefile1.Split('_');
-                var esiste =GiaVerificati.Find(x => x.Contains(_filedacontrollare[2] + " _" + _filedacontrollare[3]));
-                if (FileDaOmettere.Contains(_filedacontrollare[1]) || 
-                    !string.IsNullOrEmpty( esiste)) 
-                    
+                if (nomefile1.Substring(1, 5).ToLower() != "dummy" 
+                    && nomefile1.Substring(1, 5) != "00000"
+                    && nomefile1.Substring(1, 5) != "NullSN")
                 {
-                }
-                else
-                {
-                    _nomifile.Add(_filedacontrollare[2] + " _" +_filedacontrollare[3]);
-                }
+                    string[] _filedacontrollare = nomefile1.Split('_');
+                    var esiste = GiaVerificati.Find(x => x.Contains(_filedacontrollare[2] + " _" + _filedacontrollare[3]));
+                    if (FileDaOmettere.Contains(_filedacontrollare[1]) ||
+                        !string.IsNullOrEmpty(esiste))
 
+                    {
+                    }
+                    else
+                    {
+                        try
+                        { _nomifile.Add(_filedacontrollare[2] + " _" + _filedacontrollare[3]); }
+                        catch
+                        {
+                            MessageBox.Show("errore su file " + _filedacontrollare[0] + _filedacontrollare[1]);
+                        }
+                    }
+                }
             }
             if(_nomifile.Count>0)
             {
-                _nomifile.Sort();
-                for(int i=0; i<_nomifile.Count-1;i++ )
+                if (_firsttime)
                 {
-                    if (_nomifile[i] != _nomifile[i + 1])
+                    _nomifile.Sort();
+                    for (int i = 0; i < _nomifile.Count - 1; i++)
                     {
                         GiaVerificati.Add(_nomifile[i]);
-                        _Filesolo = _nomifile[i];
-                        return true;
                     }
-                    i++;
+                    _firsttime = false;
+                }
+                else
+                {
+                    _nomifile.Sort();
+                    for (int i = 0; i < _nomifile.Count - 1; i++)
+                    {
+                        if (_nomifile[i] != _nomifile[i + 1])
+                        {
+                            GiaVerificati.Add(_nomifile[i]);
+                            _Filesolo = _nomifile[i];
+
+                            return true;
+
+                        }
+                        i++;
+                    }
                 }
             }
             return false;

@@ -1,1 +1,0 @@
-Server=GSMSRV;Database=GSM;User Id=sa;Password=naviger;
