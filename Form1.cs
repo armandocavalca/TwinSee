@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -84,8 +85,22 @@ namespace TwinSee
         private bool ControllaGemelli()
         {
             List<string> _nomifile = new List<string>();
-            DirectoryInfo _di = new DirectoryInfo( ConfigValueFolder);
-            var ElencoFile = _di.GetFiles();
+            //DirectoryInfo _di = new DirectoryInfo( ConfigValueFolder);
+            //var ElencoFile =                 _di.GetFiles();
+            //var ElencoFile =
+            //    Directory.GetFiles(ConfigValueFolder).
+            //    Where(x => new FileInfo(x).CreationTime.Date == DateTime.Today.Date);
+            DateTime today = DateTime.Now.Date.AddDays(-1);
+            FileInfo[] ElencoFile = new DirectoryInfo(ConfigValueFolder)
+                                     .EnumerateFiles()
+                                     .Select(x => {
+                                         x.Refresh();
+                                         return x;
+                                     })
+                                     .Where(x =>  x.LastWriteTime.Date == today)
+                                     .ToArray()
+                                     ;
+            //.Where(x => x.CreationTime.Date == today || x.LastWriteTime == today)
             foreach (var f in ElencoFile)
             {
 
@@ -95,7 +110,7 @@ namespace TwinSee
                     && nomefile1.Substring(1, 5) != "NullSN")
                 {
                     string[] _filedacontrollare = nomefile1.Split('_');
-                    var esiste = GiaVerificati.Find(x => x.Contains(_filedacontrollare[2] + " _" + _filedacontrollare[3]));
+                    var esiste = GiaVerificati.Find(x => x.Contains(_filedacontrollare[2] + " _" + _filedacontrollare[3].Replace("-", ":")));
                     if (FileDaOmettere.Contains(_filedacontrollare[1]) ||
                         !string.IsNullOrEmpty(esiste))
 
@@ -104,7 +119,9 @@ namespace TwinSee
                     else
                     {
                         try
-                        { _nomifile.Add(_filedacontrollare[2] + " _" + _filedacontrollare[3]); }
+                        {
+                            _nomifile.Add(_filedacontrollare[2] + " _" + _filedacontrollare[3].Replace("-",":")); 
+                        }
                         catch
                         {
                             MessageBox.Show("errore su file " + _filedacontrollare[0] + _filedacontrollare[1]);
@@ -128,7 +145,17 @@ namespace TwinSee
                     _nomifile.Sort();
                     for (int i = 0; i < _nomifile.Count - 1; i++)
                     {
-                        if (_nomifile[i] != _nomifile[i + 1])
+                        var _newora = _nomifile[i+1].Substring(12, 8);
+
+                        DateTime _neworaMin = DateTime.Parse(_newora).AddSeconds(-5);
+                        DateTime _neworaMax = DateTime.Parse(_newora).AddSeconds(+5);
+
+                        string _testFileMin = _nomifile[i + 1].Substring(0, 12) + _neworaMin.TimeOfDay.ToString();
+                        string _testFileMax = _nomifile[i + 1].Substring(0, 12) + _neworaMax.TimeOfDay.ToString();
+
+                        //if (_nomifile[i] != _nomifile[i + 1])
+                        if (string.Compare( _nomifile[i] , _testFileMin)<=0  ||
+                            string.Compare(_nomifile[i] , _testFileMax)>= 0)
                         {
                             GiaVerificati.Add(_nomifile[i]);
                             _Filesolo = _nomifile[i];
