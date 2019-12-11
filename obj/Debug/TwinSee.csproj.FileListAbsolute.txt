@@ -12,3 +12,4 @@ C:\dati clienti\Gsm Applicativi\TwinSee\obj\Debug\TwinSee.csproj.CopyComplete
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\ValidaUser.exe
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\ValidaUser.pdb
 C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\ValidaUser.exe.config
+C:\dati clienti\Gsm Applicativi\TwinSee\bin\Debug\System.IO.FileSystem.Primitives.dll

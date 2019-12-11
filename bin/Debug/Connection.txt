@@ -1,1 +1,1 @@
-Server=192.168.234.103\sqlexpress;Database=GSM;User Id=sa;Password=naviger;
+Server=DESKTOP-0L3HPNT\SQLEXPRESS;Database=GSM;User Id=sa;Password=cavalca58;
